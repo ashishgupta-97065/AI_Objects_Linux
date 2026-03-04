@@ -1,0 +1,64 @@
+# Model weights (large binary files)
+*.ckpt
+*.safetensors
+*.bin
+*.pt
+*.pth
+*.onnx
+*.pkl
+*.npy
+*.npz
+*.h5
+*.hdf5
+
+# Output artifacts
+outputs/
+*.glb
+*.obj
+*.ply
+*.stl
+*.fbx
+
+# Python
+__pycache__/
+*.py[cod]
+*.class
+*.egg-info/
+dist/
+build/
+.eggs/
+*.egg
+.Python
+
+# Conda / virtual envs
+*.conda
+envs/
+.conda/
+
+# CUDA compilation cache
+*.cubin
+*.fatbin
+*.ptx
+
+# Jupyter
+.ipynb_checkpoints/
+*.ipynb
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# Logs
+*.log
+logs/
+runs/
+
+# HuggingFace cache
+.cache/
+
+# OS
+.DS_Store
+Thumbs.db
