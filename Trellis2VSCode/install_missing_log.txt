@@ -1,0 +1,330 @@
+=== Starting missing installs: Fri Mar  6 04:48:35 UTC 2026 ===
+
+--- [1/2] Installing nvdiffrec ---
+Cloning into '/tmp/extensions/nvdiffrec'...
+Processing /tmp/extensions/nvdiffrec
+  Preparing metadata (pyproject.toml): started
+  Preparing metadata (pyproject.toml): finished with status 'done'
+Building wheels for collected packages: nvdiffrec_render
+  Building wheel for nvdiffrec_render (pyproject.toml): started
+  Building wheel for nvdiffrec_render (pyproject.toml): finished with status 'error'
+  error: subprocess-exited-with-error
+  
+  × Building wheel for nvdiffrec_render (pyproject.toml) did not run successfully.
+  │ exit code: 1
+  ╰─> [253 lines of output]
+      running bdist_wheel
+      running build
+      running build_py
+      creating build/lib.linux-x86_64-cpython-310/nvdiffrec_render
+      copying nvdiffrec_render/render.py -> build/lib.linux-x86_64-cpython-310/nvdiffrec_render
+      copying nvdiffrec_render/mesh.py -> build/lib.linux-x86_64-cpython-310/nvdiffrec_render
+      copying nvdiffrec_render/texture.py -> build/lib.linux-x86_64-cpython-310/nvdiffrec_render
+      copying nvdiffrec_render/util.py -> build/lib.linux-x86_64-cpython-310/nvdiffrec_render
+      copying nvdiffrec_render/obj.py -> build/lib.linux-x86_64-cpython-310/nvdiffrec_render
+      copying nvdiffrec_render/light.py -> build/lib.linux-x86_64-cpython-310/nvdiffrec_render
+      copying nvdiffrec_render/__init__.py -> build/lib.linux-x86_64-cpython-310/nvdiffrec_render
+      copying nvdiffrec_render/regularizer.py -> build/lib.linux-x86_64-cpython-310/nvdiffrec_render
+      copying nvdiffrec_render/mlptexture.py -> build/lib.linux-x86_64-cpython-310/nvdiffrec_render
+      copying nvdiffrec_render/material.py -> build/lib.linux-x86_64-cpython-310/nvdiffrec_render
+      creating build/lib.linux-x86_64-cpython-310/nvdiffrec_render/renderutils
+      copying nvdiffrec_render/renderutils/bsdf.py -> build/lib.linux-x86_64-cpython-310/nvdiffrec_render/renderutils
+      copying nvdiffrec_render/renderutils/loss.py -> build/lib.linux-x86_64-cpython-310/nvdiffrec_render/renderutils
+      copying nvdiffrec_render/renderutils/ops.py -> build/lib.linux-x86_64-cpython-310/nvdiffrec_render/renderutils
+      copying nvdiffrec_render/renderutils/__init__.py -> build/lib.linux-x86_64-cpython-310/nvdiffrec_render/renderutils
+      copying nvdiffrec_render/bsdf_256_256.bin -> build/lib.linux-x86_64-cpython-310/nvdiffrec_render
+      running build_ext
+      W0306 04:48:49.018000 103841 site-packages/torch/utils/cpp_extension.py:525] The detected CUDA version (12.6) has a minor version mismatch with the version that was used to compile PyTorch (12.8). Most likely this shouldn't be a problem.
+      W0306 04:48:49.018000 103841 site-packages/torch/utils/cpp_extension.py:535] There are no g++ version bounds defined for CUDA version 12.6
+      building 'nvdiffrec_render.renderutils._C' extension
+      creating /tmp/extensions/nvdiffrec/build/temp.linux-x86_64-cpython-310/nvdiffrec_render/renderutils/c_src
+      [1/7] c++ -MMD -MF /tmp/extensions/nvdiffrec/build/temp.linux-x86_64-cpython-310/nvdiffrec_render/renderutils/c_src/common.o.d -pthread -B /home/ag/miniconda3/envs/trellis2vscode/compiler_compat -Wno-unused-result -Wsign-compare -DNDEBUG -fwrapv -O2 -Wall -fPIC -O2 -isystem /home/ag/miniconda3/envs/trellis2vscode/include -fPIC -O2 -isystem /home/ag/miniconda3/envs/trellis2vscode/include -fPIC -I/home/ag/miniconda3/envs/trellis2vscode/lib/python3.10/site-packages/torch/include -I/home/ag/miniconda3/envs/trellis2vscode/lib/python3.10/site-packages/torch/include/torch/csrc/api/include -I/usr/local/cuda/include -I/home/ag/miniconda3/envs/trellis2vscode/include/python3.10 -c -c /tmp/extensions/nvdiffrec/nvdiffrec_render/renderutils/c_src/common.cpp -o /tmp/extensions/nvdiffrec/build/temp.linux-x86_64-cpython-310/nvdiffrec_render/renderutils/c_src/common.o -DNVDR_TORCH -DTORCH_API_INCLUDE_EXTENSION_H -DTORCH_EXTENSION_NAME=_C -std=c++17
+      /tmp/extensions/nvdiffrec/nvdiffrec_render/renderutils/c_src/common.cpp: In function ‘dim3 getLaunchBlockSize(int, int, dim3)’:
+      /tmp/extensions/nvdiffrec/nvdiffrec_render/renderutils/c_src/common.cpp:29:16: warning: comparison of integer expressions of different signedness: ‘unsigned int’ and ‘int’ [-Wsign-compare]
+         29 |     if (dims.x < bw)
+            |         ~~~~~~~^~~~
+      /tmp/extensions/nvdiffrec/nvdiffrec_render/renderutils/c_src/common.cpp:32:26: warning: comparison of integer expressions of different signedness: ‘int’ and ‘unsigned int’ [-Wsign-compare]
+         32 |         while ((bw >> 1) >= dims.x)
+            |                ~~~~~~~~~~^~~~~~~~~
+      /tmp/extensions/nvdiffrec/nvdiffrec_render/renderutils/c_src/common.cpp:37:16: warning: comparison of integer expressions of different signedness: ‘int’ and ‘unsigned int’ [-Wsign-compare]
+         37 |         if (bh > dims.y)
+            |             ~~~^~~~~~~~
+      /tmp/extensions/nvdiffrec/nvdiffrec_render/renderutils/c_src/common.cpp:40:21: warning: comparison of integer expressions of different signedness: ‘unsigned int’ and ‘int’ [-Wsign-compare]
+         40 |     else if (dims.y < bh)
+            |              ~~~~~~~^~~~
+      /tmp/extensions/nvdiffrec/nvdiffrec_render/renderutils/c_src/common.cpp:43:19: warning: comparison of integer expressions of different signedness: ‘int’ and ‘unsigned int’ [-Wsign-compare]
+         43 |         while (bh > dims.y)
+            |                ~~~^~~~~~~~
+      /tmp/extensions/nvdiffrec/nvdiffrec_render/renderutils/c_src/common.cpp:46:20: warning: comparison of integer expressions of different signedness: ‘int’ and ‘unsigned int’ [-Wsign-compare]
+         46 |             if (bw < dims.x)
+            |                 ~~~^~~~~~~~
+      [2/7] /usr/local/cuda/bin/nvcc --generate-dependencies-with-compile --dependency-output /tmp/extensions/nvdiffrec/build/temp.linux-x86_64-cpython-310/nvdiffrec_render/renderutils/c_src/mesh.o.d -I/home/ag/miniconda3/envs/trellis2vscode/lib/python3.10/site-packages/torch/include -I/home/ag/miniconda3/envs/trellis2vscode/lib/python3.10/site-packages/torch/include/torch/csrc/api/include -I/usr/local/cuda/include -I/home/ag/miniconda3/envs/trellis2vscode/include/python3.10 -c -c /tmp/extensions/nvdiffrec/nvdiffrec_render/renderutils/c_src/mesh.cu -o /tmp/extensions/nvdiffrec/build/temp.linux-x86_64-cpython-310/nvdiffrec_render/renderutils/c_src/mesh.o -D__CUDA_NO_HALF_OPERATORS__ -D__CUDA_NO_HALF_CONVERSIONS__ -D__CUDA_NO_BFLOAT16_CONVERSIONS__ -D__CUDA_NO_HALF2_OPERATORS__ --expt-relaxed-constexpr --compiler-options ''"'"'-fPIC'"'"'' -DNVDR_TORCH -DTORCH_API_INCLUDE_EXTENSION_H -DTORCH_EXTENSION_NAME=_C -gencode=arch=compute_89,code=compute_89 -gencode=arch=compute_89,code=sm_89 -std=c++17
+      [3/7] /usr/local/cuda/bin/nvcc --generate-dependencies-with-compile --dependency-output /tmp/extensions/nvdiffrec/build/temp.linux-x86_64-cpython-310/nvdiffrec_render/renderutils/c_src/normal.o.d -I/home/ag/miniconda3/envs/trellis2vscode/lib/python3.10/site-packages/torch/include -I/home/ag/miniconda3/envs/trellis2vscode/lib/python3.10/site-packages/torch/include/torch/csrc/api/include -I/usr/local/cuda/include -I/home/ag/miniconda3/envs/trellis2vscode/include/python3.10 -c -c /tmp/extensions/nvdiffrec/nvdiffrec_render/renderutils/c_src/normal.cu -o /tmp/extensions/nvdiffrec/build/temp.linux-x86_64-cpython-310/nvdiffrec_render/renderutils/c_src/normal.o -D__CUDA_NO_HALF_OPERATORS__ -D__CUDA_NO_HALF_CONVERSIONS__ -D__CUDA_NO_BFLOAT16_CONVERSIONS__ -D__CUDA_NO_HALF2_OPERATORS__ --expt-relaxed-constexpr --compiler-options ''"'"'-fPIC'"'"'' -DNVDR_TORCH -DTORCH_API_INCLUDE_EXTENSION_H -DTORCH_EXTENSION_NAME=_C -gencode=arch=compute_89,code=compute_89 -gencode=arch=compute_89,code=sm_89 -std=c++17
+      [4/7] /usr/local/cuda/bin/nvcc --generate-dependencies-with-compile --dependency-output /tmp/extensions/nvdiffrec/build/temp.linux-x86_64-cpython-310/nvdiffrec_render/renderutils/c_src/loss.o.d -I/home/ag/miniconda3/envs/trellis2vscode/lib/python3.10/site-packages/torch/include -I/home/ag/miniconda3/envs/trellis2vscode/lib/python3.10/site-packages/torch/include/torch/csrc/api/include -I/usr/local/cuda/include -I/home/ag/miniconda3/envs/trellis2vscode/include/python3.10 -c -c /tmp/extensions/nvdiffrec/nvdiffrec_render/renderutils/c_src/loss.cu -o /tmp/extensions/nvdiffrec/build/temp.linux-x86_64-cpython-310/nvdiffrec_render/renderutils/c_src/loss.o -D__CUDA_NO_HALF_OPERATORS__ -D__CUDA_NO_HALF_CONVERSIONS__ -D__CUDA_NO_BFLOAT16_CONVERSIONS__ -D__CUDA_NO_HALF2_OPERATORS__ --expt-relaxed-constexpr --compiler-options ''"'"'-fPIC'"'"'' -DNVDR_TORCH -DTORCH_API_INCLUDE_EXTENSION_H -DTORCH_EXTENSION_NAME=_C -gencode=arch=compute_89,code=compute_89 -gencode=arch=compute_89,code=sm_89 -std=c++17
+      [5/7] /usr/local/cuda/bin/nvcc --generate-dependencies-with-compile --dependency-output /tmp/extensions/nvdiffrec/build/temp.linux-x86_64-cpython-310/nvdiffrec_render/renderutils/c_src/cubemap.o.d -I/home/ag/miniconda3/envs/trellis2vscode/lib/python3.10/site-packages/torch/include -I/home/ag/miniconda3/envs/trellis2vscode/lib/python3.10/site-packages/torch/include/torch/csrc/api/include -I/usr/local/cuda/include -I/home/ag/miniconda3/envs/trellis2vscode/include/python3.10 -c -c /tmp/extensions/nvdiffrec/nvdiffrec_render/renderutils/c_src/cubemap.cu -o /tmp/extensions/nvdiffrec/build/temp.linux-x86_64-cpython-310/nvdiffrec_render/renderutils/c_src/cubemap.o -D__CUDA_NO_HALF_OPERATORS__ -D__CUDA_NO_HALF_CONVERSIONS__ -D__CUDA_NO_BFLOAT16_CONVERSIONS__ -D__CUDA_NO_HALF2_OPERATORS__ --expt-relaxed-constexpr --compiler-options ''"'"'-fPIC'"'"'' -DNVDR_TORCH -DTORCH_API_INCLUDE_EXTENSION_H -DTORCH_EXTENSION_NAME=_C -gencode=arch=compute_89,code=compute_89 -gencode=arch=compute_89,code=sm_89 -std=c++17
+      [6/7] /usr/local/cuda/bin/nvcc --generate-dependencies-with-compile --dependency-output /tmp/extensions/nvdiffrec/build/temp.linux-x86_64-cpython-310/nvdiffrec_render/renderutils/c_src/bsdf.o.d -I/home/ag/miniconda3/envs/trellis2vscode/lib/python3.10/site-packages/torch/include -I/home/ag/miniconda3/envs/trellis2vscode/lib/python3.10/site-packages/torch/include/torch/csrc/api/include -I/usr/local/cuda/include -I/home/ag/miniconda3/envs/trellis2vscode/include/python3.10 -c -c /tmp/extensions/nvdiffrec/nvdiffrec_render/renderutils/c_src/bsdf.cu -o /tmp/extensions/nvdiffrec/build/temp.linux-x86_64-cpython-310/nvdiffrec_render/renderutils/c_src/bsdf.o -D__CUDA_NO_HALF_OPERATORS__ -D__CUDA_NO_HALF_CONVERSIONS__ -D__CUDA_NO_BFLOAT16_CONVERSIONS__ -D__CUDA_NO_HALF2_OPERATORS__ --expt-relaxed-constexpr --compiler-options ''"'"'-fPIC'"'"'' -DNVDR_TORCH -DTORCH_API_INCLUDE_EXTENSION_H -DTORCH_EXTENSION_NAME=_C -gencode=arch=compute_89,code=compute_89 -gencode=arch=compute_89,code=sm_89 -std=c++17
+      [7/7] c++ -MMD -MF /tmp/extensions/nvdiffrec/build/temp.linux-x86_64-cpython-310/nvdiffrec_render/renderutils/c_src/torch_bindings.o.d -pthread -B /home/ag/miniconda3/envs/trellis2vscode/compiler_compat -Wno-unused-result -Wsign-compare -DNDEBUG -fwrapv -O2 -Wall -fPIC -O2 -isystem /home/ag/miniconda3/envs/trellis2vscode/include -fPIC -O2 -isystem /home/ag/miniconda3/envs/trellis2vscode/include -fPIC -I/home/ag/miniconda3/envs/trellis2vscode/lib/python3.10/site-packages/torch/include -I/home/ag/miniconda3/envs/trellis2vscode/lib/python3.10/site-packages/torch/include/torch/csrc/api/include -I/usr/local/cuda/include -I/home/ag/miniconda3/envs/trellis2vscode/include/python3.10 -c -c /tmp/extensions/nvdiffrec/nvdiffrec_render/renderutils/c_src/torch_bindings.cpp -o /tmp/extensions/nvdiffrec/build/temp.linux-x86_64-cpython-310/nvdiffrec_render/renderutils/c_src/torch_bindings.o -DNVDR_TORCH -DTORCH_API_INCLUDE_EXTENSION_H -DTORCH_EXTENSION_NAME=_C -std=c++17
+      /tmp/extensions/nvdiffrec/nvdiffrec_render/renderutils/c_src/torch_bindings.cpp: In function ‘at::Tensor prepare_shading_normal_fwd(at::Tensor, at::Tensor, at::Tensor, at::Tensor, at::Tensor, at::Tensor, bool, bool, bool)’:
+      /tmp/extensions/nvdiffrec/nvdiffrec_render/renderutils/c_src/torch_bindings.cpp:25:56: warning: unused variable ‘err’ [-Wunused-variable]
+         25 | #define NVDR_CHECK_CUDA_ERROR(CUDA_CALL) { cudaError_t err = CUDA_CALL; AT_CUDA_CHECK(cudaGetLastError()); }
+            |                                                        ^~~
+      /tmp/extensions/nvdiffrec/nvdiffrec_render/renderutils/c_src/torch_bindings.cpp:198:5: note: in expansion of macro ‘NVDR_CHECK_CUDA_ERROR’
+        198 |     NVDR_CHECK_CUDA_ERROR(cudaLaunchKernel((const void*)PrepareShadingNormalFwdKernel, gridSize, blockSize, args, 0, stream));
+            |     ^~~~~~~~~~~~~~~~~~~~~
+      /tmp/extensions/nvdiffrec/nvdiffrec_render/renderutils/c_src/torch_bindings.cpp: In function ‘std::tuple<at::Tensor, at::Tensor, at::Tensor, at::Tensor, at::Tensor, at::Tensor> prepare_shading_normal_bwd(at::Tensor, at::Tensor, at::Tensor, at::Tensor, at::Tensor, at::Tensor, at::Tensor, bool, bool)’:
+      /tmp/extensions/nvdiffrec/nvdiffrec_render/renderutils/c_src/torch_bindings.cpp:25:56: warning: unused variable ‘err’ [-Wunused-variable]
+         25 | #define NVDR_CHECK_CUDA_ERROR(CUDA_CALL) { cudaError_t err = CUDA_CALL; AT_CUDA_CHECK(cudaGetLastError()); }
+            |                                                        ^~~
+      /tmp/extensions/nvdiffrec/nvdiffrec_render/renderutils/c_src/torch_bindings.cpp:229:5: note: in expansion of macro ‘NVDR_CHECK_CUDA_ERROR’
+        229 |     NVDR_CHECK_CUDA_ERROR(cudaLaunchKernel((const void*)PrepareShadingNormalBwdKernel, gridSize, blockSize, args, 0, stream));
+            |     ^~~~~~~~~~~~~~~~~~~~~
+      /tmp/extensions/nvdiffrec/nvdiffrec_render/renderutils/c_src/torch_bindings.cpp: In function ‘at::Tensor lambert_fwd(at::Tensor, at::Tensor, bool)’:
+      /tmp/extensions/nvdiffrec/nvdiffrec_render/renderutils/c_src/torch_bindings.cpp:25:56: warning: unused variable ‘err’ [-Wunused-variable]
+         25 | #define NVDR_CHECK_CUDA_ERROR(CUDA_CALL) { cudaError_t err = CUDA_CALL; AT_CUDA_CHECK(cudaGetLastError()); }
+            |                                                        ^~~
+      /tmp/extensions/nvdiffrec/nvdiffrec_render/renderutils/c_src/torch_bindings.cpp:263:5: note: in expansion of macro ‘NVDR_CHECK_CUDA_ERROR’
+        263 |     NVDR_CHECK_CUDA_ERROR(cudaLaunchKernel((const void*)LambertFwdKernel, gridSize, blockSize, args, 0, stream));
+            |     ^~~~~~~~~~~~~~~~~~~~~
+      /tmp/extensions/nvdiffrec/nvdiffrec_render/renderutils/c_src/torch_bindings.cpp: In function ‘std::tuple<at::Tensor, at::Tensor> lambert_bwd(at::Tensor, at::Tensor, at::Tensor)’:
+      /tmp/extensions/nvdiffrec/nvdiffrec_render/renderutils/c_src/torch_bindings.cpp:25:56: warning: unused variable ‘err’ [-Wunused-variable]
+         25 | #define NVDR_CHECK_CUDA_ERROR(CUDA_CALL) { cudaError_t err = CUDA_CALL; AT_CUDA_CHECK(cudaGetLastError()); }
+            |                                                        ^~~
+      /tmp/extensions/nvdiffrec/nvdiffrec_render/renderutils/c_src/torch_bindings.cpp:287:5: note: in expansion of macro ‘NVDR_CHECK_CUDA_ERROR’
+        287 |     NVDR_CHECK_CUDA_ERROR(cudaLaunchKernel((const void*)LambertBwdKernel, gridSize, blockSize, args, 0, stream));
+            |     ^~~~~~~~~~~~~~~~~~~~~
+      /tmp/extensions/nvdiffrec/nvdiffrec_render/renderutils/c_src/torch_bindings.cpp: In function ‘at::Tensor frostbite_fwd(at::Tensor, at::Tensor, at::Tensor, at::Tensor, bool)’:
+      /tmp/extensions/nvdiffrec/nvdiffrec_render/renderutils/c_src/torch_bindings.cpp:25:56: warning: unused variable ‘err’ [-Wunused-variable]
+         25 | #define NVDR_CHECK_CUDA_ERROR(CUDA_CALL) { cudaError_t err = CUDA_CALL; AT_CUDA_CHECK(cudaGetLastError()); }
+            |                                                        ^~~
+      /tmp/extensions/nvdiffrec/nvdiffrec_render/renderutils/c_src/torch_bindings.cpp:325:5: note: in expansion of macro ‘NVDR_CHECK_CUDA_ERROR’
+        325 |     NVDR_CHECK_CUDA_ERROR(cudaLaunchKernel((const void*)FrostbiteDiffuseFwdKernel, gridSize, blockSize, args, 0, stream));
+            |     ^~~~~~~~~~~~~~~~~~~~~
+      /tmp/extensions/nvdiffrec/nvdiffrec_render/renderutils/c_src/torch_bindings.cpp: In function ‘std::tuple<at::Tensor, at::Tensor, at::Tensor, at::Tensor> frostbite_bwd(at::Tensor, at::Tensor, at::Tensor, at::Tensor, at::Tensor)’:
+      /tmp/extensions/nvdiffrec/nvdiffrec_render/renderutils/c_src/torch_bindings.cpp:25:56: warning: unused variable ‘err’ [-Wunused-variable]
+         25 | #define NVDR_CHECK_CUDA_ERROR(CUDA_CALL) { cudaError_t err = CUDA_CALL; AT_CUDA_CHECK(cudaGetLastError()); }
+            |                                                        ^~~
+      /tmp/extensions/nvdiffrec/nvdiffrec_render/renderutils/c_src/torch_bindings.cpp:351:5: note: in expansion of macro ‘NVDR_CHECK_CUDA_ERROR’
+        351 |     NVDR_CHECK_CUDA_ERROR(cudaLaunchKernel((const void*)FrostbiteDiffuseBwdKernel, gridSize, blockSize, args, 0, stream));
+            |     ^~~~~~~~~~~~~~~~~~~~~
+      /tmp/extensions/nvdiffrec/nvdiffrec_render/renderutils/c_src/torch_bindings.cpp: In function ‘at::Tensor fresnel_shlick_fwd(at::Tensor, at::Tensor, at::Tensor, bool)’:
+      /tmp/extensions/nvdiffrec/nvdiffrec_render/renderutils/c_src/torch_bindings.cpp:25:56: warning: unused variable ‘err’ [-Wunused-variable]
+         25 | #define NVDR_CHECK_CUDA_ERROR(CUDA_CALL) { cudaError_t err = CUDA_CALL; AT_CUDA_CHECK(cudaGetLastError()); }
+            |                                                        ^~~
+      /tmp/extensions/nvdiffrec/nvdiffrec_render/renderutils/c_src/torch_bindings.cpp:387:5: note: in expansion of macro ‘NVDR_CHECK_CUDA_ERROR’
+        387 |     NVDR_CHECK_CUDA_ERROR(cudaLaunchKernel((const void*)FresnelShlickFwdKernel, gridSize, blockSize, args, 0, stream));
+            |     ^~~~~~~~~~~~~~~~~~~~~
+      /tmp/extensions/nvdiffrec/nvdiffrec_render/renderutils/c_src/torch_bindings.cpp: In function ‘std::tuple<at::Tensor, at::Tensor, at::Tensor> fresnel_shlick_bwd(at::Tensor, at::Tensor, at::Tensor, at::Tensor)’:
+      /tmp/extensions/nvdiffrec/nvdiffrec_render/renderutils/c_src/torch_bindings.cpp:25:56: warning: unused variable ‘err’ [-Wunused-variable]
+         25 | #define NVDR_CHECK_CUDA_ERROR(CUDA_CALL) { cudaError_t err = CUDA_CALL; AT_CUDA_CHECK(cudaGetLastError()); }
+            |                                                        ^~~
+      /tmp/extensions/nvdiffrec/nvdiffrec_render/renderutils/c_src/torch_bindings.cpp:412:5: note: in expansion of macro ‘NVDR_CHECK_CUDA_ERROR’
+        412 |     NVDR_CHECK_CUDA_ERROR(cudaLaunchKernel((const void*)FresnelShlickBwdKernel, gridSize, blockSize, args, 0, stream));
+            |     ^~~~~~~~~~~~~~~~~~~~~
+      /tmp/extensions/nvdiffrec/nvdiffrec_render/renderutils/c_src/torch_bindings.cpp: In function ‘at::Tensor ndf_ggx_fwd(at::Tensor, at::Tensor, bool)’:
+      /tmp/extensions/nvdiffrec/nvdiffrec_render/renderutils/c_src/torch_bindings.cpp:25:56: warning: unused variable ‘err’ [-Wunused-variable]
+         25 | #define NVDR_CHECK_CUDA_ERROR(CUDA_CALL) { cudaError_t err = CUDA_CALL; AT_CUDA_CHECK(cudaGetLastError()); }
+            |                                                        ^~~
+      /tmp/extensions/nvdiffrec/nvdiffrec_render/renderutils/c_src/torch_bindings.cpp:446:5: note: in expansion of macro ‘NVDR_CHECK_CUDA_ERROR’
+        446 |     NVDR_CHECK_CUDA_ERROR(cudaLaunchKernel((const void*)ndfGGXFwdKernel, gridSize, blockSize, args, 0, stream));
+            |     ^~~~~~~~~~~~~~~~~~~~~
+      /tmp/extensions/nvdiffrec/nvdiffrec_render/renderutils/c_src/torch_bindings.cpp: In function ‘std::tuple<at::Tensor, at::Tensor> ndf_ggx_bwd(at::Tensor, at::Tensor, at::Tensor)’:
+      /tmp/extensions/nvdiffrec/nvdiffrec_render/renderutils/c_src/torch_bindings.cpp:25:56: warning: unused variable ‘err’ [-Wunused-variable]
+         25 | #define NVDR_CHECK_CUDA_ERROR(CUDA_CALL) { cudaError_t err = CUDA_CALL; AT_CUDA_CHECK(cudaGetLastError()); }
+            |                                                        ^~~
+      /tmp/extensions/nvdiffrec/nvdiffrec_render/renderutils/c_src/torch_bindings.cpp:470:5: note: in expansion of macro ‘NVDR_CHECK_CUDA_ERROR’
+        470 |     NVDR_CHECK_CUDA_ERROR(cudaLaunchKernel((const void*)ndfGGXBwdKernel, gridSize, blockSize, args, 0, stream));
+            |     ^~~~~~~~~~~~~~~~~~~~~
+      /tmp/extensions/nvdiffrec/nvdiffrec_render/renderutils/c_src/torch_bindings.cpp: In function ‘at::Tensor lambda_ggx_fwd(at::Tensor, at::Tensor, bool)’:
+      /tmp/extensions/nvdiffrec/nvdiffrec_render/renderutils/c_src/torch_bindings.cpp:25:56: warning: unused variable ‘err’ [-Wunused-variable]
+         25 | #define NVDR_CHECK_CUDA_ERROR(CUDA_CALL) { cudaError_t err = CUDA_CALL; AT_CUDA_CHECK(cudaGetLastError()); }
+            |                                                        ^~~
+      /tmp/extensions/nvdiffrec/nvdiffrec_render/renderutils/c_src/torch_bindings.cpp:504:5: note: in expansion of macro ‘NVDR_CHECK_CUDA_ERROR’
+        504 |     NVDR_CHECK_CUDA_ERROR(cudaLaunchKernel((const void*)lambdaGGXFwdKernel, gridSize, blockSize, args, 0, stream));
+            |     ^~~~~~~~~~~~~~~~~~~~~
+      /tmp/extensions/nvdiffrec/nvdiffrec_render/renderutils/c_src/torch_bindings.cpp: In function ‘std::tuple<at::Tensor, at::Tensor> lambda_ggx_bwd(at::Tensor, at::Tensor, at::Tensor)’:
+      /tmp/extensions/nvdiffrec/nvdiffrec_render/renderutils/c_src/torch_bindings.cpp:25:56: warning: unused variable ‘err’ [-Wunused-variable]
+         25 | #define NVDR_CHECK_CUDA_ERROR(CUDA_CALL) { cudaError_t err = CUDA_CALL; AT_CUDA_CHECK(cudaGetLastError()); }
+            |                                                        ^~~
+      /tmp/extensions/nvdiffrec/nvdiffrec_render/renderutils/c_src/torch_bindings.cpp:528:5: note: in expansion of macro ‘NVDR_CHECK_CUDA_ERROR’
+        528 |     NVDR_CHECK_CUDA_ERROR(cudaLaunchKernel((const void*)lambdaGGXBwdKernel, gridSize, blockSize, args, 0, stream));
+            |     ^~~~~~~~~~~~~~~~~~~~~
+      /tmp/extensions/nvdiffrec/nvdiffrec_render/renderutils/c_src/torch_bindings.cpp: In function ‘at::Tensor masking_smith_fwd(at::Tensor, at::Tensor, at::Tensor, bool)’:
+      /tmp/extensions/nvdiffrec/nvdiffrec_render/renderutils/c_src/torch_bindings.cpp:25:56: warning: unused variable ‘err’ [-Wunused-variable]
+         25 | #define NVDR_CHECK_CUDA_ERROR(CUDA_CALL) { cudaError_t err = CUDA_CALL; AT_CUDA_CHECK(cudaGetLastError()); }
+            |                                                        ^~~
+      /tmp/extensions/nvdiffrec/nvdiffrec_render/renderutils/c_src/torch_bindings.cpp:564:5: note: in expansion of macro ‘NVDR_CHECK_CUDA_ERROR’
+        564 |     NVDR_CHECK_CUDA_ERROR(cudaLaunchKernel((const void*)maskingSmithFwdKernel, gridSize, blockSize, args, 0, stream));
+            |     ^~~~~~~~~~~~~~~~~~~~~
+      /tmp/extensions/nvdiffrec/nvdiffrec_render/renderutils/c_src/torch_bindings.cpp: In function ‘std::tuple<at::Tensor, at::Tensor, at::Tensor> masking_smith_bwd(at::Tensor, at::Tensor, at::Tensor, at::Tensor)’:
+      /tmp/extensions/nvdiffrec/nvdiffrec_render/renderutils/c_src/torch_bindings.cpp:25:56: warning: unused variable ‘err’ [-Wunused-variable]
+         25 | #define NVDR_CHECK_CUDA_ERROR(CUDA_CALL) { cudaError_t err = CUDA_CALL; AT_CUDA_CHECK(cudaGetLastError()); }
+            |                                                        ^~~
+      /tmp/extensions/nvdiffrec/nvdiffrec_render/renderutils/c_src/torch_bindings.cpp:589:5: note: in expansion of macro ‘NVDR_CHECK_CUDA_ERROR’
+        589 |     NVDR_CHECK_CUDA_ERROR(cudaLaunchKernel((const void*)maskingSmithBwdKernel, gridSize, blockSize, args, 0, stream));
+            |     ^~~~~~~~~~~~~~~~~~~~~
+      /tmp/extensions/nvdiffrec/nvdiffrec_render/renderutils/c_src/torch_bindings.cpp: In function ‘at::Tensor pbr_specular_fwd(at::Tensor, at::Tensor, at::Tensor, at::Tensor, at::Tensor, float, bool)’:
+      /tmp/extensions/nvdiffrec/nvdiffrec_render/renderutils/c_src/torch_bindings.cpp:25:56: warning: unused variable ‘err’ [-Wunused-variable]
+         25 | #define NVDR_CHECK_CUDA_ERROR(CUDA_CALL) { cudaError_t err = CUDA_CALL; AT_CUDA_CHECK(cudaGetLastError()); }
+            |                                                        ^~~
+      /tmp/extensions/nvdiffrec/nvdiffrec_render/renderutils/c_src/torch_bindings.cpp:630:5: note: in expansion of macro ‘NVDR_CHECK_CUDA_ERROR’
+        630 |     NVDR_CHECK_CUDA_ERROR(cudaLaunchKernel((const void*)pbrSpecularFwdKernel, gridSize, blockSize, args, 0, stream));
+            |     ^~~~~~~~~~~~~~~~~~~~~
+      /tmp/extensions/nvdiffrec/nvdiffrec_render/renderutils/c_src/torch_bindings.cpp: In function ‘std::tuple<at::Tensor, at::Tensor, at::Tensor, at::Tensor, at::Tensor> pbr_specular_bwd(at::Tensor, at::Tensor, at::Tensor, at::Tensor, at::Tensor, float, at::Tensor)’:
+      /tmp/extensions/nvdiffrec/nvdiffrec_render/renderutils/c_src/torch_bindings.cpp:25:56: warning: unused variable ‘err’ [-Wunused-variable]
+         25 | #define NVDR_CHECK_CUDA_ERROR(CUDA_CALL) { cudaError_t err = CUDA_CALL; AT_CUDA_CHECK(cudaGetLastError()); }
+            |                                                        ^~~
+      /tmp/extensions/nvdiffrec/nvdiffrec_render/renderutils/c_src/torch_bindings.cpp:658:5: note: in expansion of macro ‘NVDR_CHECK_CUDA_ERROR’
+        658 |     NVDR_CHECK_CUDA_ERROR(cudaLaunchKernel((const void*)pbrSpecularBwdKernel, gridSize, blockSize, args, 0, stream));
+            |     ^~~~~~~~~~~~~~~~~~~~~
+      /tmp/extensions/nvdiffrec/nvdiffrec_render/renderutils/c_src/torch_bindings.cpp: In function ‘at::Tensor pbr_bsdf_fwd(at::Tensor, at::Tensor, at::Tensor, at::Tensor, at::Tensor, at::Tensor, float, int, bool)’:
+      /tmp/extensions/nvdiffrec/nvdiffrec_render/renderutils/c_src/torch_bindings.cpp:25:56: warning: unused variable ‘err’ [-Wunused-variable]
+         25 | #define NVDR_CHECK_CUDA_ERROR(CUDA_CALL) { cudaError_t err = CUDA_CALL; AT_CUDA_CHECK(cudaGetLastError()); }
+            |                                                        ^~~
+      /tmp/extensions/nvdiffrec/nvdiffrec_render/renderutils/c_src/torch_bindings.cpp:702:5: note: in expansion of macro ‘NVDR_CHECK_CUDA_ERROR’
+        702 |     NVDR_CHECK_CUDA_ERROR(cudaLaunchKernel((const void*)pbrBSDFFwdKernel, gridSize, blockSize, args, 0, stream));
+            |     ^~~~~~~~~~~~~~~~~~~~~
+      /tmp/extensions/nvdiffrec/nvdiffrec_render/renderutils/c_src/torch_bindings.cpp: In function ‘std::tuple<at::Tensor, at::Tensor, at::Tensor, at::Tensor, at::Tensor, at::Tensor> pbr_bsdf_bwd(at::Tensor, at::Tensor, at::Tensor, at::Tensor, at::Tensor, at::Tensor, float, int, at::Tensor)’:
+      /tmp/extensions/nvdiffrec/nvdiffrec_render/renderutils/c_src/torch_bindings.cpp:25:56: warning: unused variable ‘err’ [-Wunused-variable]
+         25 | #define NVDR_CHECK_CUDA_ERROR(CUDA_CALL) { cudaError_t err = CUDA_CALL; AT_CUDA_CHECK(cudaGetLastError()); }
+            |                                                        ^~~
+      /tmp/extensions/nvdiffrec/nvdiffrec_render/renderutils/c_src/torch_bindings.cpp:732:5: note: in expansion of macro ‘NVDR_CHECK_CUDA_ERROR’
+        732 |     NVDR_CHECK_CUDA_ERROR(cudaLaunchKernel((const void*)pbrBSDFBwdKernel, gridSize, blockSize, args, 0, stream));
+            |     ^~~~~~~~~~~~~~~~~~~~~
+      /tmp/extensions/nvdiffrec/nvdiffrec_render/renderutils/c_src/torch_bindings.cpp: In function ‘at::Tensor diffuse_cubemap_fwd(at::Tensor)’:
+      /tmp/extensions/nvdiffrec/nvdiffrec_render/renderutils/c_src/torch_bindings.cpp:25:56: warning: unused variable ‘err’ [-Wunused-variable]
+         25 | #define NVDR_CHECK_CUDA_ERROR(CUDA_CALL) { cudaError_t err = CUDA_CALL; AT_CUDA_CHECK(cudaGetLastError()); }
+            |                                                        ^~~
+      /tmp/extensions/nvdiffrec/nvdiffrec_render/renderutils/c_src/torch_bindings.cpp:764:5: note: in expansion of macro ‘NVDR_CHECK_CUDA_ERROR’
+        764 |     NVDR_CHECK_CUDA_ERROR(cudaLaunchKernel((const void*)DiffuseCubemapFwdKernel, gridSize, blockSize, args, 0, stream));
+            |     ^~~~~~~~~~~~~~~~~~~~~
+      /tmp/extensions/nvdiffrec/nvdiffrec_render/renderutils/c_src/torch_bindings.cpp: In function ‘at::Tensor diffuse_cubemap_bwd(at::Tensor, at::Tensor)’:
+      /tmp/extensions/nvdiffrec/nvdiffrec_render/renderutils/c_src/torch_bindings.cpp:25:56: warning: unused variable ‘err’ [-Wunused-variable]
+         25 | #define NVDR_CHECK_CUDA_ERROR(CUDA_CALL) { cudaError_t err = CUDA_CALL; AT_CUDA_CHECK(cudaGetLastError()); }
+            |                                                        ^~~
+      /tmp/extensions/nvdiffrec/nvdiffrec_render/renderutils/c_src/torch_bindings.cpp:794:5: note: in expansion of macro ‘NVDR_CHECK_CUDA_ERROR’
+        794 |     NVDR_CHECK_CUDA_ERROR(cudaLaunchKernel((const void*)DiffuseCubemapBwdKernel, gridSize, blockSize, args, 0, stream));
+            |     ^~~~~~~~~~~~~~~~~~~~~
+      /tmp/extensions/nvdiffrec/nvdiffrec_render/renderutils/c_src/torch_bindings.cpp: In function ‘at::Tensor specular_bounds(int, float)’:
+      /tmp/extensions/nvdiffrec/nvdiffrec_render/renderutils/c_src/torch_bindings.cpp:25:56: warning: unused variable ‘err’ [-Wunused-variable]
+         25 | #define NVDR_CHECK_CUDA_ERROR(CUDA_CALL) { cudaError_t err = CUDA_CALL; AT_CUDA_CHECK(cudaGetLastError()); }
+            |                                                        ^~~
+      /tmp/extensions/nvdiffrec/nvdiffrec_render/renderutils/c_src/torch_bindings.cpp:821:5: note: in expansion of macro ‘NVDR_CHECK_CUDA_ERROR’
+        821 |     NVDR_CHECK_CUDA_ERROR(cudaLaunchKernel((const void*)SpecularBoundsKernel, gridSize, blockSize, args, 0, stream));
+            |     ^~~~~~~~~~~~~~~~~~~~~
+      /tmp/extensions/nvdiffrec/nvdiffrec_render/renderutils/c_src/torch_bindings.cpp: In function ‘at::Tensor specular_cubemap_fwd(at::Tensor, at::Tensor, float, float)’:
+      /tmp/extensions/nvdiffrec/nvdiffrec_render/renderutils/c_src/torch_bindings.cpp:25:56: warning: unused variable ‘err’ [-Wunused-variable]
+         25 | #define NVDR_CHECK_CUDA_ERROR(CUDA_CALL) { cudaError_t err = CUDA_CALL; AT_CUDA_CHECK(cudaGetLastError()); }
+            |                                                        ^~~
+      /tmp/extensions/nvdiffrec/nvdiffrec_render/renderutils/c_src/torch_bindings.cpp:854:5: note: in expansion of macro ‘NVDR_CHECK_CUDA_ERROR’
+        854 |     NVDR_CHECK_CUDA_ERROR(cudaLaunchKernel((const void*)SpecularCubemapFwdKernel, gridSize, blockSize, args, 0, stream));
+            |     ^~~~~~~~~~~~~~~~~~~~~
+      /tmp/extensions/nvdiffrec/nvdiffrec_render/renderutils/c_src/torch_bindings.cpp: In function ‘at::Tensor specular_cubemap_bwd(at::Tensor, at::Tensor, at::Tensor, float, float)’:
+      /tmp/extensions/nvdiffrec/nvdiffrec_render/renderutils/c_src/torch_bindings.cpp:25:56: warning: unused variable ‘err’ [-Wunused-variable]
+         25 | #define NVDR_CHECK_CUDA_ERROR(CUDA_CALL) { cudaError_t err = CUDA_CALL; AT_CUDA_CHECK(cudaGetLastError()); }
+            |                                                        ^~~
+      /tmp/extensions/nvdiffrec/nvdiffrec_render/renderutils/c_src/torch_bindings.cpp:887:5: note: in expansion of macro ‘NVDR_CHECK_CUDA_ERROR’
+        887 |     NVDR_CHECK_CUDA_ERROR(cudaLaunchKernel((const void*)SpecularCubemapBwdKernel, gridSize, blockSize, args, 0, stream));
+            |     ^~~~~~~~~~~~~~~~~~~~~
+      /tmp/extensions/nvdiffrec/nvdiffrec_render/renderutils/c_src/torch_bindings.cpp: In function ‘at::Tensor image_loss_fwd(at::Tensor, at::Tensor, std::string, std::string, bool)’:
+      /tmp/extensions/nvdiffrec/nvdiffrec_render/renderutils/c_src/torch_bindings.cpp:25:56: warning: unused variable ‘err’ [-Wunused-variable]
+         25 | #define NVDR_CHECK_CUDA_ERROR(CUDA_CALL) { cudaError_t err = CUDA_CALL; AT_CUDA_CHECK(cudaGetLastError()); }
+            |                                                        ^~~
+      /tmp/extensions/nvdiffrec/nvdiffrec_render/renderutils/c_src/torch_bindings.cpp:936:5: note: in expansion of macro ‘NVDR_CHECK_CUDA_ERROR’
+        936 |     NVDR_CHECK_CUDA_ERROR(cudaLaunchKernel((const void*)imgLossFwdKernel, gridSize, blockSize, args, 0, stream));
+            |     ^~~~~~~~~~~~~~~~~~~~~
+      /tmp/extensions/nvdiffrec/nvdiffrec_render/renderutils/c_src/torch_bindings.cpp: In function ‘std::tuple<at::Tensor, at::Tensor> image_loss_bwd(at::Tensor, at::Tensor, at::Tensor, std::string, std::string)’:
+      /tmp/extensions/nvdiffrec/nvdiffrec_render/renderutils/c_src/torch_bindings.cpp:25:56: warning: unused variable ‘err’ [-Wunused-variable]
+         25 | #define NVDR_CHECK_CUDA_ERROR(CUDA_CALL) { cudaError_t err = CUDA_CALL; AT_CUDA_CHECK(cudaGetLastError()); }
+            |                                                        ^~~
+      /tmp/extensions/nvdiffrec/nvdiffrec_render/renderutils/c_src/torch_bindings.cpp:963:5: note: in expansion of macro ‘NVDR_CHECK_CUDA_ERROR’
+        963 |     NVDR_CHECK_CUDA_ERROR(cudaLaunchKernel((const void*)imgLossBwdKernel, gridSize, blockSize, args, 0, stream));
+            |     ^~~~~~~~~~~~~~~~~~~~~
+      /tmp/extensions/nvdiffrec/nvdiffrec_render/renderutils/c_src/torch_bindings.cpp:953:10: warning: variable ‘warpSize’ set but not used [-Wunused-but-set-variable]
+        953 |     dim3 warpSize = getWarpSize(blockSize);
+            |          ^~~~~~~~
+      /tmp/extensions/nvdiffrec/nvdiffrec_render/renderutils/c_src/torch_bindings.cpp: In function ‘at::Tensor xfm_fwd(at::Tensor, at::Tensor, bool, bool)’:
+      /tmp/extensions/nvdiffrec/nvdiffrec_render/renderutils/c_src/torch_bindings.cpp:25:56: warning: unused variable ‘err’ [-Wunused-variable]
+         25 | #define NVDR_CHECK_CUDA_ERROR(CUDA_CALL) { cudaError_t err = CUDA_CALL; AT_CUDA_CHECK(cudaGetLastError()); }
+            |                                                        ^~~
+      /tmp/extensions/nvdiffrec/nvdiffrec_render/renderutils/c_src/torch_bindings.cpp:1001:5: note: in expansion of macro ‘NVDR_CHECK_CUDA_ERROR’
+       1001 |     NVDR_CHECK_CUDA_ERROR(cudaLaunchKernel((const void*)xfmPointsFwdKernel, gridSize, blockSize, args, 0, stream));
+            |     ^~~~~~~~~~~~~~~~~~~~~
+      /tmp/extensions/nvdiffrec/nvdiffrec_render/renderutils/c_src/torch_bindings.cpp:988:10: warning: variable ‘warpSize’ set but not used [-Wunused-but-set-variable]
+        988 |     dim3 warpSize = getWarpSize(blockSize);
+            |          ^~~~~~~~
+      /tmp/extensions/nvdiffrec/nvdiffrec_render/renderutils/c_src/torch_bindings.cpp: In function ‘at::Tensor xfm_bwd(at::Tensor, at::Tensor, at::Tensor, bool)’:
+      /tmp/extensions/nvdiffrec/nvdiffrec_render/renderutils/c_src/torch_bindings.cpp:25:56: warning: unused variable ‘err’ [-Wunused-variable]
+         25 | #define NVDR_CHECK_CUDA_ERROR(CUDA_CALL) { cudaError_t err = CUDA_CALL; AT_CUDA_CHECK(cudaGetLastError()); }
+            |                                                        ^~~
+      /tmp/extensions/nvdiffrec/nvdiffrec_render/renderutils/c_src/torch_bindings.cpp:1029:5: note: in expansion of macro ‘NVDR_CHECK_CUDA_ERROR’
+       1029 |     NVDR_CHECK_CUDA_ERROR(cudaLaunchKernel((const void*)xfmPointsBwdKernel, gridSize, blockSize, args, 0, stream));
+            |     ^~~~~~~~~~~~~~~~~~~~~
+      /tmp/extensions/nvdiffrec/nvdiffrec_render/renderutils/c_src/torch_bindings.cpp:1019:10: warning: variable ‘warpSize’ set but not used [-Wunused-but-set-variable]
+       1019 |     dim3 warpSize = getWarpSize(blockSize);
+            |          ^~~~~~~~
+      g++ -pthread -B /home/ag/miniconda3/envs/trellis2vscode/compiler_compat -Wno-unused-result -Wsign-compare -DNDEBUG -fwrapv -O2 -Wall -fPIC -O2 -isystem /home/ag/miniconda3/envs/trellis2vscode/include -fPIC -O2 -isystem /home/ag/miniconda3/envs/trellis2vscode/include -shared /tmp/extensions/nvdiffrec/build/temp.linux-x86_64-cpython-310/nvdiffrec_render/renderutils/c_src/bsdf.o /tmp/extensions/nvdiffrec/build/temp.linux-x86_64-cpython-310/nvdiffrec_render/renderutils/c_src/common.o /tmp/extensions/nvdiffrec/build/temp.linux-x86_64-cpython-310/nvdiffrec_render/renderutils/c_src/cubemap.o /tmp/extensions/nvdiffrec/build/temp.linux-x86_64-cpython-310/nvdiffrec_render/renderutils/c_src/loss.o /tmp/extensions/nvdiffrec/build/temp.linux-x86_64-cpython-310/nvdiffrec_render/renderutils/c_src/mesh.o /tmp/extensions/nvdiffrec/build/temp.linux-x86_64-cpython-310/nvdiffrec_render/renderutils/c_src/normal.o /tmp/extensions/nvdiffrec/build/temp.linux-x86_64-cpython-310/nvdiffrec_render/renderutils/c_src/torch_bindings.o -L/home/ag/miniconda3/envs/trellis2vscode/lib/python3.10/site-packages/torch/lib -L/usr/local/cuda/lib64 -lc10 -ltorch -ltorch_cpu -ltorch_python -lcudart -lc10_cuda -ltorch_cuda -o build/lib.linux-x86_64-cpython-310/nvdiffrec_render/renderutils/_C.cpython-310-x86_64-linux-gnu.so -lcuda -lnvrtc
+      /home/ag/miniconda3/envs/trellis2vscode/compiler_compat/ld: cannot find -lcuda: No such file or directory
+      collect2: error: ld returned 1 exit status
+      error: command '/usr/bin/g++' failed with exit code 1
+      [end of output]
+  
+  note: This error originates from a subprocess, and is likely not a problem with pip.
+  ERROR: Failed building wheel for nvdiffrec_render
+Failed to build nvdiffrec_render
+error: failed-wheel-build-for-install
+
+× Failed to build installable wheels for some pyproject.toml based projects
+╰─> nvdiffrec_render
+=== Starting missing installs: Fri Mar  6 04:52:29 UTC 2026 ===
+
+--- [1/2] Installing nvdiffrec ---
+nvdiffrec already cloned, using existing.
+Processing /tmp/extensions/nvdiffrec
+  Preparing metadata (pyproject.toml): started
+  Preparing metadata (pyproject.toml): finished with status 'done'
+Building wheels for collected packages: nvdiffrec_render
+  Building wheel for nvdiffrec_render (pyproject.toml): started
+  Building wheel for nvdiffrec_render (pyproject.toml): finished with status 'done'
+  Created wheel for nvdiffrec_render: filename=nvdiffrec_render-0.0.0-cp310-cp310-linux_x86_64.whl size=903481 sha256=30a0a1cc0874eaf6352b2a072393b06fb12205f2619cc39f766acb192326bd56
+  Stored in directory: /tmp/pip-ephem-wheel-cache-ruowweai/wheels/4a/4b/63/fc6cabaaaf2544325cb8047fe7c6d0a2b8b7566f186cb953dd
+Successfully built nvdiffrec_render
+Installing collected packages: nvdiffrec_render
+Successfully installed nvdiffrec_render-0.0.0
+--- nvdiffrec DONE ---
+
+--- [2/2] Installing flash-attn ---
+Collecting flash-attn==2.7.3
+  Using cached flash_attn-2.7.3-cp310-cp310-linux_x86_64.whl
+Requirement already satisfied: torch in /home/ag/miniconda3/envs/trellis2vscode/lib/python3.10/site-packages (from flash-attn==2.7.3) (2.10.0)
+Requirement already satisfied: einops in /home/ag/miniconda3/envs/trellis2vscode/lib/python3.10/site-packages (from flash-attn==2.7.3) (0.8.2)
+Requirement already satisfied: filelock in /home/ag/miniconda3/envs/trellis2vscode/lib/python3.10/site-packages (from torch->flash-attn==2.7.3) (3.25.0)
+Requirement already satisfied: typing-extensions>=4.10.0 in /home/ag/miniconda3/envs/trellis2vscode/lib/python3.10/site-packages (from torch->flash-attn==2.7.3) (4.15.0)
+Requirement already satisfied: sympy>=1.13.3 in /home/ag/miniconda3/envs/trellis2vscode/lib/python3.10/site-packages (from torch->flash-attn==2.7.3) (1.14.0)
+Requirement already satisfied: networkx>=2.5.1 in /home/ag/miniconda3/envs/trellis2vscode/lib/python3.10/site-packages (from torch->flash-attn==2.7.3) (3.4.2)
+Requirement already satisfied: jinja2 in /home/ag/miniconda3/envs/trellis2vscode/lib/python3.10/site-packages (from torch->flash-attn==2.7.3) (3.1.6)
+Requirement already satisfied: fsspec>=0.8.5 in /home/ag/miniconda3/envs/trellis2vscode/lib/python3.10/site-packages (from torch->flash-attn==2.7.3) (2026.2.0)
+Requirement already satisfied: cuda-bindings==12.9.4 in /home/ag/miniconda3/envs/trellis2vscode/lib/python3.10/site-packages (from torch->flash-attn==2.7.3) (12.9.4)
+Requirement already satisfied: nvidia-cuda-nvrtc-cu12==12.8.93 in /home/ag/miniconda3/envs/trellis2vscode/lib/python3.10/site-packages (from torch->flash-attn==2.7.3) (12.8.93)
+Requirement already satisfied: nvidia-cuda-runtime-cu12==12.8.90 in /home/ag/miniconda3/envs/trellis2vscode/lib/python3.10/site-packages (from torch->flash-attn==2.7.3) (12.8.90)
+Requirement already satisfied: nvidia-cuda-cupti-cu12==12.8.90 in /home/ag/miniconda3/envs/trellis2vscode/lib/python3.10/site-packages (from torch->flash-attn==2.7.3) (12.8.90)
+Requirement already satisfied: nvidia-cudnn-cu12==9.10.2.21 in /home/ag/miniconda3/envs/trellis2vscode/lib/python3.10/site-packages (from torch->flash-attn==2.7.3) (9.10.2.21)
+Requirement already satisfied: nvidia-cublas-cu12==12.8.4.1 in /home/ag/miniconda3/envs/trellis2vscode/lib/python3.10/site-packages (from torch->flash-attn==2.7.3) (12.8.4.1)
+Requirement already satisfied: nvidia-cufft-cu12==11.3.3.83 in /home/ag/miniconda3/envs/trellis2vscode/lib/python3.10/site-packages (from torch->flash-attn==2.7.3) (11.3.3.83)
+Requirement already satisfied: nvidia-curand-cu12==10.3.9.90 in /home/ag/miniconda3/envs/trellis2vscode/lib/python3.10/site-packages (from torch->flash-attn==2.7.3) (10.3.9.90)
+Requirement already satisfied: nvidia-cusolver-cu12==11.7.3.90 in /home/ag/miniconda3/envs/trellis2vscode/lib/python3.10/site-packages (from torch->flash-attn==2.7.3) (11.7.3.90)
+Requirement already satisfied: nvidia-cusparse-cu12==12.5.8.93 in /home/ag/miniconda3/envs/trellis2vscode/lib/python3.10/site-packages (from torch->flash-attn==2.7.3) (12.5.8.93)
+Requirement already satisfied: nvidia-cusparselt-cu12==0.7.1 in /home/ag/miniconda3/envs/trellis2vscode/lib/python3.10/site-packages (from torch->flash-attn==2.7.3) (0.7.1)
+Requirement already satisfied: nvidia-nccl-cu12==2.27.5 in /home/ag/miniconda3/envs/trellis2vscode/lib/python3.10/site-packages (from torch->flash-attn==2.7.3) (2.27.5)
+Requirement already satisfied: nvidia-nvshmem-cu12==3.4.5 in /home/ag/miniconda3/envs/trellis2vscode/lib/python3.10/site-packages (from torch->flash-attn==2.7.3) (3.4.5)
+Requirement already satisfied: nvidia-nvtx-cu12==12.8.90 in /home/ag/miniconda3/envs/trellis2vscode/lib/python3.10/site-packages (from torch->flash-attn==2.7.3) (12.8.90)
+Requirement already satisfied: nvidia-nvjitlink-cu12==12.8.93 in /home/ag/miniconda3/envs/trellis2vscode/lib/python3.10/site-packages (from torch->flash-attn==2.7.3) (12.8.93)
+Requirement already satisfied: nvidia-cufile-cu12==1.13.1.3 in /home/ag/miniconda3/envs/trellis2vscode/lib/python3.10/site-packages (from torch->flash-attn==2.7.3) (1.13.1.3)
+Requirement already satisfied: triton==3.6.0 in /home/ag/miniconda3/envs/trellis2vscode/lib/python3.10/site-packages (from torch->flash-attn==2.7.3) (3.6.0)
+Requirement already satisfied: cuda-pathfinder~=1.1 in /home/ag/miniconda3/envs/trellis2vscode/lib/python3.10/site-packages (from cuda-bindings==12.9.4->torch->flash-attn==2.7.3) (1.4.0)
+Requirement already satisfied: mpmath<1.4,>=1.1.0 in /home/ag/miniconda3/envs/trellis2vscode/lib/python3.10/site-packages (from sympy>=1.13.3->torch->flash-attn==2.7.3) (1.3.0)
+Requirement already satisfied: MarkupSafe>=2.0 in /home/ag/miniconda3/envs/trellis2vscode/lib/python3.10/site-packages (from jinja2->torch->flash-attn==2.7.3) (3.0.3)
+Installing collected packages: flash-attn
+Successfully installed flash-attn-2.7.3
+--- flash-attn DONE ---
+
+=== All installs complete: Fri Mar  6 04:52:39 UTC 2026 ===
